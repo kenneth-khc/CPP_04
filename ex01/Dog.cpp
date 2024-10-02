@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongAnimal.cpp                                    :+:      :+:    :+:   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kecheong <kecheong@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/02 16:45:08 by kecheong          #+#    #+#             */
-/*   Updated: 2024/10/02 20:28:46 by kecheong         ###   ########.fr       */
+/*   Created: 2024/10/02 16:55:43 by kecheong          #+#    #+#             */
+/*   Updated: 2024/10/02 21:12:49 by kecheong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include "WrongAnimal.hpp"
+#include "Dog.hpp"
 
 /* Color codes */
 #define GREEN "\033[0;32m"
@@ -20,44 +20,48 @@
 #define CRESET "\033[0m"
 
 /* Default constructor */
-WrongAnimal::WrongAnimal(): type("Default WrongAnimal")
+Dog::Dog(): Animal("Dog")
 {
-	std::cout << GREEN << "WrongAnimal default constructor" << CRESET << std::endl;
-}
+	std::cout << GREEN
+			  << "Dog default constructor"
+			  << CRESET
+			  << std::endl;
 
-/* Constructor */
-WrongAnimal::WrongAnimal(std::string newType): type(newType)
-{
-	std::cout << GREEN << "WrongAnimal constructor" << CRESET << std::endl;
+	brain = new Brain();
+	std::cout << '\n';
 }
 
 /* Copy constructor */
-WrongAnimal::WrongAnimal(const WrongAnimal& other)
+Dog::Dog(const Dog& other)
 {
 	*this = other;
 }
 
 /* Copy assignment operator */
-WrongAnimal&	WrongAnimal::operator=(const WrongAnimal& other)
+Dog&	Dog::operator=(const Dog& other)
 {
 	this->type = other.type;
 	return *this;
 }
 
 /* Destructor */
-WrongAnimal::~WrongAnimal()
+Dog::~Dog()
 {
-	std::cout << RED << "WrongAnimal destructor" << CRESET << std::endl;
+	std::cout << '\n'
+			  << RED
+			  << "Dog destructor"
+			  << CRESET
+			  << std::endl;
+
+	delete brain;
 }
 
-/* Get the type of the WrongAnimal */
-const std::string&	WrongAnimal::getType() const
+const std::string&	Dog::getType() const
 {
 	return type;
 }
 
-void	WrongAnimal::makeSound() const
+void	Dog::makeSound() const
 {
-	std::cout << "WrongAnimal makes a sound" << std::endl;
+	std::cout << "Dog is barking" << std::endl;
 }
-
