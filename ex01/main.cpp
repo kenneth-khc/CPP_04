@@ -6,7 +6,7 @@
 /*   By: kecheong <kecheong@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 16:49:02 by kecheong          #+#    #+#             */
-/*   Updated: 2024/10/02 22:35:01 by kecheong         ###   ########.fr       */
+/*   Updated: 2024/10/11 21:24:10 by kecheong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,17 @@ void
 testArrayOfAnimals();
 
 void
-testDeepCopy();
+testCatDeepCopy();
+
+void
+testDogDeepCopy();
 
 int main()
 {
 	testSubjectPDF();
 	/*testArrayOfAnimals();*/
-	/*testDeepCopy();*/
+	/*testCatDeepCopy();*/
+	/*testDogDeepCopy();*/
 
 	return 0;
 }
@@ -61,19 +65,31 @@ void	testArrayOfAnimals()
 	}
 }
 
-void	testDeepCopy()
+void	testCatDeepCopy()
 {
 	// test copy construct
 	const Cat	cat1; // default construct
 	const Cat	cat2(cat1); // copy construct
-
+	
 	// test copy assignment
 	Cat	cat3;
 	Cat	cat4;
 	cat3 = cat4;
 
 	// test self assignment
-	Cat*	ptr = &cat4;
-	*ptr = cat4;
+	Cat*	catptr = &cat4;
+	*catptr = cat4;
 }
 
+void	testDogDeepCopy()
+{
+	const Dog	dog1;
+	const Dog	dog2(dog1);
+
+	Dog	dog3;
+	Dog	dog4;
+	dog3 = dog4;
+
+	Dog*	dogptr = &dog4;
+	*dogptr = dog4;
+}

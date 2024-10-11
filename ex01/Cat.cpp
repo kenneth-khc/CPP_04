@@ -6,7 +6,7 @@
 /*   By: kecheong <kecheong@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 16:44:05 by kecheong          #+#    #+#             */
-/*   Updated: 2024/10/02 22:02:51 by kecheong         ###   ########.fr       */
+/*   Updated: 2024/10/11 21:13:46 by kecheong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,7 @@
 /* Default constructor */
 Cat::Cat(): Animal("Cat")
 {
-	std::cout << GREEN
-			  << "Cat default constructor"
-			  << CRESET
+	std::cout << GREEN << "Cat default constructor called" << CRESET
 			  << std::endl;
 
 	brain = new Brain();
@@ -34,33 +32,45 @@ Cat::Cat(): Animal("Cat")
 /* Copy constructor */
 Cat::Cat(const Cat& other)
 {
-	std::cout << GREEN
-			  << "Cat copy constructor"
-			  << CRESET
+	std::cout << GREEN << "Cat copy constructor called" << CRESET
 			  << std::endl;
 
 	this->type = other.type;
-	this->brain = new Brain(); // use new brain instead of the existing brain
+	if (other.brain)
+	{
+		this->brain = new Brain(*other.brain); // call Brain's copy constructor
+											   // and let it handle its copy
+	}
+	else
+	{
+		this->brain = NULL;
+	}
 	std::cout << '\n';
 }
 
 /* Copy assignment operator */
 Cat&	Cat::operator=(const Cat& other)
 {
-	std::cout << GREEN
-			  << "Cat copy assignment operator"
-			  << CRESET
+	std::cout << GREEN << "Cat copy assignment operator called" << CRESET
 			  << std::endl;
 
 	if (this == &other)
 	{
-		std::cout << "Not copy assigning due to self assignment" << std::endl;
+		std::cout << "Not copy assigning cat due to self assignment\n"
+				  << std::endl;
 		return *this;
 	}
 
-	delete brain;
 	this->type = other.type;
-	this->brain = new Brain();
+	delete brain;
+	if (other.brain)
+	{
+		this->brain = new Brain(*other.brain);
+	}
+	else
+	{
+		this->brain = NULL;
+	}
 	std::cout << '\n';
 	return *this;
 }
@@ -68,21 +78,18 @@ Cat&	Cat::operator=(const Cat& other)
 /* Destructor */
 Cat::~Cat()
 {
-	std::cout << '\n'
-			  << RED
-			  << "Cat destructor"
-			  << CRESET
+	std::cout << RED << "Cat destructor called" << CRESET
 			  << std::endl;
 
 	delete brain;
 }
 
-void	Cat::makeSound() const
-{
-	std::cout << "Cat is meowing" << std::endl;
-}
-
 const std::string&	Cat::getType() const
 {
 	return type;
+}
+
+void	Cat::makeSound() const
+{
+	std::cout << "Cat is meow meowing" << std::endl;
 }

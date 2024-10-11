@@ -6,7 +6,7 @@
 /*   By: kecheong <kecheong@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 16:39:51 by kecheong          #+#    #+#             */
-/*   Updated: 2024/10/02 21:03:12 by kecheong         ###   ########.fr       */
+/*   Updated: 2024/10/11 21:20:08 by kecheong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,11 @@ public:
 	Animal&	operator=(const Animal&); // Copy assignment operator
 	virtual ~Animal(); // Destructor
 
-
 	virtual	const std::string&	getType() const;
 	virtual void				makeSound() const;
 
 protected:
 	std::string	type;
-
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: kecheong <kecheong@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 16:41:08 by kecheong          #+#    #+#             */
-/*   Updated: 2024/10/02 21:44:00 by kecheong         ###   ########.fr       */
+/*   Updated: 2024/10/11 17:50:45 by kecheong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,10 @@ public:
 	Cat&	operator=(const Cat&); // Copy assignment operator
 	~Cat(); // Destructor
 	
-	const std::string&	getType() const;
-	void				makeSound() const;
+	const std::string&	getType() const; // override
+	void				makeSound() const; // override
 
 private:
-public:
 	Brain*	brain;
 };
 
