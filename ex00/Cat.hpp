@@ -23,8 +23,8 @@ public:
 	Cat&	operator=(const Cat&); // Copy assignment operator
 	~Cat(); // Destructor
 	
-	const std::string&	getType() const;
-	void				makeSound() const;
+	const std::string&	getType() const; // override
+	void				makeSound() const; // override
 
 };
 

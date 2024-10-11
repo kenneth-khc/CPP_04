@@ -23,8 +23,8 @@ public:
 	Dog(const Dog&); // Copy constructor
 	Dog&	operator=(const Dog&); // Copy assignment operator
 
-	const std::string&	getType() const;
-	void				makeSound() const;
+	const std::string&	getType() const; // override
+	void				makeSound() const; // override
 };
 
 #endif

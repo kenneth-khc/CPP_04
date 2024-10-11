@@ -22,24 +22,32 @@
 /* Default constructor */
 WrongAnimal::WrongAnimal(): type("Default WrongAnimal")
 {
-	std::cout << GREEN << "WrongAnimal default constructor" << CRESET << std::endl;
+	std::cout << GREEN << "WrongAnimal default constructor called" << CRESET
+			  << std::endl;
 }
 
 /* Constructor */
 WrongAnimal::WrongAnimal(std::string newType): type(newType)
 {
-	std::cout << GREEN << "WrongAnimal constructor" << CRESET << std::endl;
+	std::cout << GREEN << "WrongAnimal constructor called" << CRESET
+			  << std::endl;
 }
 
 /* Copy constructor */
 WrongAnimal::WrongAnimal(const WrongAnimal& other)
 {
+	std::cout << GREEN << "WrongAnimal copy constructor called" << CRESET
+			  << std::endl;
+
 	*this = other;
 }
 
 /* Copy assignment operator */
 WrongAnimal&	WrongAnimal::operator=(const WrongAnimal& other)
 {
+	std::cout << GREEN << "WrongAnimal copy assignment operator called" << CRESET
+			  << std::endl;
+
 	this->type = other.type;
 	return *this;
 }
@@ -47,7 +55,8 @@ WrongAnimal&	WrongAnimal::operator=(const WrongAnimal& other)
 /* Destructor */
 WrongAnimal::~WrongAnimal()
 {
-	std::cout << RED << "WrongAnimal destructor" << CRESET << std::endl;
+	std::cout << RED << "WrongAnimal destructor called" << CRESET
+			  << std::endl;
 }
 
 /* Get the type of the WrongAnimal */

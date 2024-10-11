@@ -22,18 +22,25 @@
 /* Default constructor */
 WrongCat::WrongCat(): WrongAnimal("WrongCat")
 {
-	std::cout << "WrongCat default constructor" << std::endl;
+	std::cout << GREEN << "WrongCat default constructor called" << CRESET
+			  << std::endl;
 }
 
 /* Copy constructor */
 WrongCat::WrongCat(const WrongCat& other)
 {
+	std::cout << GREEN << "WrongCat copy constructor called" << CRESET 
+			  << std::endl;
+
 	*this = other;
 }
 
 /* Copy assignment operator */
 WrongCat&	WrongCat::operator=(const WrongCat& other)
 {
+	std::cout << GREEN << "WrongCat copy assignment operator called" << CRESET
+			  << std::endl;
+
 	this->type = other.type;
 	return *this;
 }
@@ -41,12 +48,12 @@ WrongCat&	WrongCat::operator=(const WrongCat& other)
 /* Destructor */
 WrongCat::~WrongCat()
 {
-	std::cout << "WrongCat destructor" << std::endl;
+	std::cout << "WrongCat destructor called" << std::endl;
 }
 
 void	WrongCat::makeSound() const
 {
-	std::cout << "WrongCat is meowing" << std::endl;
+	std::cout << "WrongCat is meowing wrongly" << std::endl;
 }
 
 const std::string&	WrongCat::getType() const

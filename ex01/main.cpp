@@ -6,7 +6,7 @@
 /*   By: kecheong <kecheong@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 16:49:02 by kecheong          #+#    #+#             */
-/*   Updated: 2024/10/02 22:02:52 by kecheong         ###   ########.fr       */
+/*   Updated: 2024/10/02 22:35:01 by kecheong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,12 +52,11 @@ void	testArrayOfAnimals()
 		i++;
 		animals[i] = new Dog();
 	}
-
 	std::cout << "\nLooping over the array to delete each animal" << std::endl;
 	for (int i = 0; i < 20; i++)
 	{
 		/* Animal's destructor is virtual so it will call the correct
-		 * Cat/Dog destructor */
+		 * Cat/Dog destructor before the base destructor */
 		delete animals[i];
 	}
 }

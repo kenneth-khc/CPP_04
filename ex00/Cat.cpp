@@ -22,18 +22,25 @@
 /* Default constructor */
 Cat::Cat(): Animal("Cat")
 {
-	std::cout << GREEN << "Cat default constructor" << CRESET << std::endl;
+	std::cout << GREEN << "Cat default constructor called" << CRESET
+			  << std::endl;
 }
 
 /* Copy constructor */
 Cat::Cat(const Cat& other)
 {
+	std::cout << GREEN << "Cat copy constructor called" << CRESET
+			  << std::endl;
+
 	*this = other;
 }
 
 /* Copy assignment operator */
 Cat&	Cat::operator=(const Cat& other)
 {
+	std::cout << GREEN << "Cat copy assignment operator called" << CRESET
+			  << std::endl;
+
 	this->type = other.type;
 	return *this;
 }
@@ -41,12 +48,13 @@ Cat&	Cat::operator=(const Cat& other)
 /* Destructor */
 Cat::~Cat()
 {
-	std::cout << RED << "Cat destructor" << CRESET << std::endl;
+	std::cout << RED << "Cat destructor called" << CRESET
+			  << std::endl;
 }
 
 void	Cat::makeSound() const
 {
-	std::cout << "Cat is meowing" << std::endl;
+	std::cout << "Cat is meow meowing" << std::endl;
 }
 
 const std::string&	Cat::getType() const

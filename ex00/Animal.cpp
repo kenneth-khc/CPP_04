@@ -22,24 +22,30 @@
 /* Default constructor */
 Animal::Animal(): type("Default Animal")
 {
-	std::cout << GREEN << "Animal default constructor" << CRESET << std::endl;
+	std::cout << GREEN << "Animal default constructor called" << CRESET << std::endl;
 }
 
 /* Constructor */
 Animal::Animal(std::string newType): type(newType)
 {
-	std::cout << GREEN << "Animal constructor" << CRESET << std::endl;
+	std::cout << GREEN << "Animal constructor called" << CRESET << std::endl;
 }
 
 /* Copy constructor */
 Animal::Animal(const Animal& other)
 {
+	std::cout << GREEN << "Animal copy constructor called" << CRESET << std::endl;
 	*this = other;
 }
 
 /* Copy assignment operator */
 Animal&	Animal::operator=(const Animal& other)
 {
+	std::cout << GREEN
+			  << "Animal copy assignment operator called"
+			  << CRESET
+			  << std::endl;
+
 	this->type = other.type;
 	return *this;
 }
@@ -47,7 +53,7 @@ Animal&	Animal::operator=(const Animal& other)
 /* Destructor */
 Animal::~Animal()
 {
-	std::cout << RED << "Animal destructor" << CRESET << std::endl;
+	std::cout << RED << "Animal destructor called" << CRESET << std::endl;
 }
 
 /* Get the type of the Animal */

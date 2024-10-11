@@ -25,8 +25,6 @@ public:
 	
 	const std::string&	getType() const;
 	void				makeSound() const;
-
-
 };
 
 #endif

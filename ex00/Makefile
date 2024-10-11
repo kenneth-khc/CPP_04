@@ -24,13 +24,17 @@ all: $(NAME)
 $(NAME): $(objs)
 	$(CXX) $(CXXFLAGS) $(objs) -o $(NAME)
 
+.PHONY: clean
 clean:
 	$(RM) $(objs)
 
+.PHONY: fclean
 fclean: clean
 	$(RM) $(NAME)
 
+.PHONY: re
 re: fclean all
 
+.PHONY: fsan
 fsan: CXXFLAGS += -fsanitize=address -g3
 fsan: $(NAME)

@@ -22,18 +22,25 @@
 /* Default constructor */
 Dog::Dog(): Animal("Dog")
 {
-	std::cout << GREEN << "Dog default constructor" << CRESET << std::endl;
+	std::cout << GREEN << "Dog default constructor called" << CRESET
+			  << std::endl;
 }
 
 /* Copy constructor */
 Dog::Dog(const Dog& other)
 {
+	std::cout << GREEN << "Dog copy constructor called" << CRESET
+			  << std::endl;
+
 	*this = other;
 }
 
 /* Copy assignment operator */
 Dog&	Dog::operator=(const Dog& other)
 {
+	std::cout << GREEN << "Dog copy assignment operator called" << CRESET
+			  << std::endl;
+
 	this->type = other.type;
 	return *this;
 }
@@ -41,7 +48,8 @@ Dog&	Dog::operator=(const Dog& other)
 /* Destructor */
 Dog::~Dog()
 {
-	std::cout << RED << "Dog destructor" << CRESET << std::endl;
+	std::cout << RED << "Dog destructor called" << CRESET
+			  << std::endl;
 }
 
 const std::string&	Dog::getType() const
@@ -51,5 +59,5 @@ const std::string&	Dog::getType() const
 
 void	Dog::makeSound() const
 {
-	std::cout << "Dog is barking" << std::endl;
+	std::cout << "Dog is woof woofing" << std::endl;
 }

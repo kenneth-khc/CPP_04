@@ -29,8 +29,8 @@ test_subtype_polymorphism();
 int main()
 {
 	test_subject_pdf();
-	test_wrong_implementation();
-	test_subtype_polymorphism();
+	//test_wrong_implementation();
+	//test_subtype_polymorphism();
 
 	return 0;
 }
