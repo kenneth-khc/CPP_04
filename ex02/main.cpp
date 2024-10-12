@@ -6,7 +6,7 @@
 /*   By: kecheong <kecheong@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 16:49:02 by kecheong          #+#    #+#             */
-/*   Updated: 2024/10/12 17:20:50 by kecheong         ###   ########.fr       */
+/*   Updated: 2024/10/12 17:42:04 by kecheong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,17 @@
 void
 testSubjectPDF();
 
+/*Animal*/
+/*testAbstractClass();*/
+
+void
+testPointersAndReferences();
+
 int main()
 {
 	testSubjectPDF();
+	/*testAbstractClass();*/
+	/*testPointersAndReferences();*/
 	return 0;
 }
 
@@ -41,4 +49,22 @@ void	testSubjectPDF()
 	/*const Animal* meta = new Animal();*/
 	/*meta->makeSound();*/
 	/*delete meta;*/
+}
+
+/*Animal	testAbstractClass()*/
+/*{*/
+/*	return Animal();*/
+/*}*/
+
+void	testPointersAndReferences()
+{
+	Animal*	ptr = new Dog(); // OK, a Dog is a type of Animal
+	ptr->makeSound();
+	std::cout << '\n';
+	delete ptr;
+
+	Animal&	ref = *new Cat(); // OK, a Cat is a type of Animal
+	ref.makeSound();
+	std::cout << '\n';
+	delete &ref; // not good practice because it causes confusion, delete with pointer instead
 }
