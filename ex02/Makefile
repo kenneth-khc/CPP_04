@@ -6,14 +6,14 @@
 #    By: kecheong <kecheong@student.42kl.edu.my>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/27 12:49:22 by kecheong          #+#    #+#              #
-#    Updated: 2024/10/11 21:20:35 by kecheong         ###   ########.fr        #
+#    Updated: 2024/10/12 23:59:47 by kecheong         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME := tests
 
 CXX := c++
-CXXFLAGS := -Wall -Werror -Wextra #-std=c++98 -pedantic
+CXXFLAGS := -Wall -Werror -Wextra -std=c++98 -pedantic
 
 srcs := main.cpp Animal.cpp Dog.cpp Cat.cpp Brain.cpp
 objs := $(srcs:.cpp=.o)

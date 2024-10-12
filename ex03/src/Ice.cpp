@@ -1,21 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cure.cpp                                           :+:      :+:    :+:   */
+/*   Ice.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kecheong <kecheong@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/12 18:16:57 by kecheong          #+#    #+#             */
-/*   Updated: 2024/10/12 18:18:05 by kecheong         ###   ########.fr       */
+/*   Created: 2024/10/12 18:04:36 by kecheong          #+#    #+#             */
+/*   Updated: 2024/10/12 18:06:50 by kecheong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include "Cure.hpp"
+#include "Ice.hpp"
 #include "ICharacter.hpp"
+#include "AMateria.hpp"
 
-void	Cure::use(ICharacter& target)
+/* Default constructor */
+Ice::Ice(): AMateria("ice")
 {
-	std::cout << "* heals " << target.getName() << "'s wounds *"
+	std::cout << "Ice default constructor called" << std::endl;
+}
+
+Ice::~Ice()
+{
+	std::cout << "Ice destructor called" << std::endl;
+}
+
+void	Ice::use(ICharacter& target)
+{
+	std::cout << "* shoots an ice bolt at " << target.getName() << " *"
 			  << std::endl;
+}
+
+AMateria*	Ice::clone() const
+{
+	return new Ice();
 }

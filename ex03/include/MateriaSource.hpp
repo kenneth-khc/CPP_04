@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cure.hpp                                           :+:      :+:    :+:   */
+/*   MateriaSource.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kecheong <kecheong@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/12 18:07:16 by kecheong          #+#    #+#             */
-/*   Updated: 2024/10/12 18:16:52 by kecheong         ###   ########.fr       */
+/*   Created: 2024/10/12 23:53:17 by kecheong          #+#    #+#             */
+/*   Updated: 2024/10/13 02:00:53 by kecheong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CURE_HPP
-# define CURE_HPP
+#ifndef MATERIASOURCE_HPP
+# define MATERIASOURCE_HPP
 
+#include <string>
+#include "IMateriaSource.hpp"
 #include "AMateria.hpp"
-#include "ICharacter.hpp"
 
-class	Cure: public AMateria
+class	MateriaSource: public IMateriaSource
 {
 public:
-	void	use(ICharacter& target); // override
-		
-private:
+	MateriaSource();
+	~MateriaSource();
+	void		learnMateria(AMateria*); // override
+	AMateria*	createMateria(std::string const& type); // override
 
 };
 

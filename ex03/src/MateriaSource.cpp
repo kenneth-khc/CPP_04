@@ -1,28 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Ice.hpp                                            :+:      :+:    :+:   */
+/*   MateriaSource.cpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kecheong <kecheong@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/12 18:02:08 by kecheong          #+#    #+#             */
-/*   Updated: 2024/10/12 18:07:06 by kecheong         ###   ########.fr       */
+/*   Created: 2024/10/12 23:56:10 by kecheong          #+#    #+#             */
+/*   Updated: 2024/10/13 02:26:12 by kecheong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ICE_HPP
-# define ICE_HPP
-
+#include "MateriaSource.hpp"
 #include "AMateria.hpp"
-#include "ICharacter.hpp"
 
-class	Ice: public AMateria
+MateriaSource::MateriaSource()
 {
-public:
-	void	use(ICharacter& target); // override
 
-private:
+}
 
-};
+MateriaSource::~MateriaSource()
+{
 
-#endif
+}
+
+void	MateriaSource::learnMateria(AMateria*)
+{
+
+}
+
+AMateria*	MateriaSource::createMateria(std::string const& type)
+{
+	(void)type; return NULL;
+}

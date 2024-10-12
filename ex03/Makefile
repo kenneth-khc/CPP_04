@@ -6,7 +6,7 @@
 #    By: kecheong <kecheong@student.42kl.edu.my>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/27 12:49:22 by kecheong          #+#    #+#              #
-#    Updated: 2024/10/12 18:06:49 by kecheong         ###   ########.fr        #
+#    Updated: 2024/10/13 03:16:05 by kecheong         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,18 +15,23 @@ NAME := tests
 CXX := c++
 CXXFLAGS := -Wall -Werror -Wextra -std=c++98 -pedantic
 
-srcs := main.cpp Ice.cpp
-objs := $(srcs:.cpp=.o)
+srcs := main.cpp AMateria.cpp Ice.cpp Cure.cpp MateriaSource.cpp Character.cpp
+objs := $(addprefix obj/, $(srcs:.cpp=.o))
 
-.PHONY: all
 all: $(NAME)
 
 $(NAME): $(objs)
-	$(CXX) $(CXXFLAGS) $(objs) -o $(NAME)
+	$(CXX) $(CXXFLAGS) -I include/ $(objs) -o $(NAME)
+
+obj/%.o: src/%.cpp
+	$(CXX) $(CXXFLAGS) -I include/ $< -c -o $@
+
+obj_dir:
+	@mkdir -p obj/
 
 .PHONY: clean
 clean:
-	$(RM) $(objs)
+	$(RM) -r obj/
 
 .PHONY: fclean
 fclean: clean
