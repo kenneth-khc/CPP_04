@@ -19,8 +19,11 @@
 class	Character : public ICharacter
 {
 public:
-	~Character();
-	Character(std::string);
+	Character(); // default constructor
+	Character(std::string); // constructor
+	Character(const Character&); // copy constructor
+	Character&	operator=(const Character&); // copy assignment operator
+	~Character(); // destructor
 
 	std::string const&	getName() const;
 	void				equip(AMateria* m);
@@ -31,7 +34,6 @@ private:
 	std::string	name;
 						#define INVENTORY_SIZE 4
 	AMateria*			inventory[INVENTORY_SIZE];
-	int					index;
 };
 
 #endif

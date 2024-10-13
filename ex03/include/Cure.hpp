@@ -19,7 +19,10 @@
 class	Cure: public AMateria
 {
 public:
-	Cure();
+	Cure(); // default constructor
+	Cure(const Cure&); // copy constructor
+	Cure&	operator=(const Cure&); // copy assignment operator
+	~Cure(); // destructor
 
 	AMateria*	clone() const; // override
 	void		use(ICharacter& target); // override

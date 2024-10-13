@@ -19,8 +19,10 @@
 class	Ice: public AMateria
 {
 public:
-	Ice();
-	~Ice();
+	Ice(); // default constructor
+	Ice(const Ice&); // copy constructor
+	Ice&	operator=(const Ice&); // copy assignment operator
+	~Ice(); // destructor
 
 	AMateria*	clone() const; // override
 	void		use(ICharacter& target); // override

@@ -21,18 +21,18 @@
 class	AMateria
 {
 protected:
-	// [...]
 	std::string	type;
 
 public:
-	AMateria(std::string const& type);
-	// [...]
-	AMateria();
-	virtual ~AMateria();
+	AMateria(); // default constructor
+	AMateria(std::string const&); // constructor
+	AMateria(const AMateria&); // copy constructor
+	virtual ~AMateria(); // destructor
+	AMateria&	operator=(const AMateria&); // copy assignment operator
 	
 	std::string const&	getType() const; // Returns the materia type
-	virtual AMateria*	clone() const = 0;
-	virtual void		use(ICharacter& target);
+	virtual AMateria*	clone() const = 0; // Return a new instance of the same materia
+	virtual void		use(ICharacter& target); // Use the materia on a target
 };
 
 #endif

@@ -21,6 +21,21 @@ Ice::Ice(): AMateria("ice")
 	std::cout << "Ice default constructor called" << std::endl;
 }
 
+/* Copy constructor */
+Ice::Ice(const Ice&): AMateria("ice")
+{
+	std::cout << "Ice copy constructor called" << std::endl;
+}
+
+Ice&	Ice::operator=(const Ice& other)
+{
+	(void)other;
+//	this->type = other.type;
+
+	return *this;
+}
+
+/* Destructor */
 Ice::~Ice()
 {
 	std::cout << "Ice destructor called" << std::endl;

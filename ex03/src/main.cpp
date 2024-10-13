@@ -10,6 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <iostream>
 #include "AMateria.hpp"
 #include "IMateriaSource.hpp"
 #include "Ice.hpp"
@@ -17,7 +18,21 @@
 #include "Character.hpp"
 #include "MateriaSource.hpp"
 
+void
+testSubjectPDF();
+
+void
+testMateriaCopy();
+
 int main()
+{
+	/*testSubjectPDF();*/
+	testMateriaCopy();
+
+	return 0;
+}
+
+void	testSubjectPDF()
 {
 	IMateriaSource* src = new MateriaSource();
 	src->learnMateria(new Ice());
@@ -38,6 +53,16 @@ int main()
 	delete bob;
 	delete me;
 	delete src;
+}
 
-	return 0;
+void	testMateriaCopy()
+{
+	Ice	ice = Ice();
+	Ice	ice2 = Ice();
+
+	std::cout << ice.getType() << std::endl;
+
+	ice = ice2;
+
+	std::cout << ice.getType() << std::endl;
 }

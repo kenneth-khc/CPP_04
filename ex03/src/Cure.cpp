@@ -14,11 +14,40 @@
 #include "Cure.hpp"
 #include "ICharacter.hpp"
 
+/* Color codes */
+#define GREEN "\033[0;32m"
+#define RED	"\033[0;31m"
+#define YELLOW "\033[0;33m"
+#define CRESET "\033[0m"
+
 /* Default constructor */
 Cure::Cure(): AMateria("cure")
 {
-	std::cout << "Cure default constructor called"
+	std::cout << GREEN << "Cure default constructor called" << CRESET
 			  << std::endl;
+}
+
+/* Copy constructor */
+Cure::Cure(const Cure&)
+{
+	std::cout << GREEN << "Cure copy constructor called" << CRESET
+			  << std::endl;
+}
+
+/* Destructor */
+Cure::~Cure()
+{
+	std::cout << RED << "Cure destructor called" << CRESET
+			  << std::endl;
+}
+
+/* Copy assignment operator */
+Cure&	Cure::operator=(const Cure&)
+{
+	std::cout << GREEN << "Copy assignment operator called" << CRESET
+			  << std::endl;
+
+	return *this;
 }
 
 void	Cure::use(ICharacter& target)

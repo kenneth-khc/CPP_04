@@ -23,10 +23,10 @@ all: $(NAME)
 $(NAME): $(objs)
 	$(CXX) $(CXXFLAGS) -I include/ $(objs) -o $(NAME)
 
-obj/%.o: src/%.cpp
+obj/%.o: src/%.cpp | obj
 	$(CXX) $(CXXFLAGS) -I include/ $< -c -o $@
 
-obj_dir:
+obj:
 	@mkdir -p obj/
 
 .PHONY: clean

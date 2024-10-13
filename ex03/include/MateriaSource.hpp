@@ -25,6 +25,11 @@ public:
 	void		learnMateria(AMateria*); // override
 	AMateria*	createMateria(std::string const& type); // override
 
+private:
+				#define INVENTORY_SIZE 4
+	AMateria*	inventory[INVENTORY_SIZE];
+	int			index;
+
 };
 
 #endif
