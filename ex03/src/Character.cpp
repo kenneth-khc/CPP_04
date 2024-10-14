@@ -34,7 +34,7 @@ Character::Character(std::string name):
 name(name),
 inventory()
 {
-	std::cout << GREEN << "Character constructor called" << CRESET
+	std::cout << GREEN << "Character constructor called\n" << CRESET
 			  << std::endl;
 }
 
@@ -44,13 +44,44 @@ name(other.name)
 {
 	std::cout << GREEN << "Character copy constructor called" << CRESET
 			  << std::endl;
+
+	for (int i = 0; i < INVENTORY_SIZE; i++)
+	{
+		if (other.inventory[i])
+		{
+			this->inventory[i] = other.inventory[i]->clone();
+		}
+	}
+}
+
+/* Copy assignment operator */
+Character&	Character::operator=(const Character& other)
+{
+	if (this == &other)
+	{
+		return *this;
+	}
+	for (int i = 0; i < INVENTORY_SIZE; i++)
+	{
+		delete inventory[i];
+	}
+	for (int i = 0; i < INVENTORY_SIZE; i++)
+	{
+		this->inventory[i] = other.inventory[i]->clone();
+	}
+	return *this;
 }
 
 /* Destructor */
 Character::~Character()
 {
-	std::cout << RED << "Character destructor called" << CRESET
+	std::cout << RED << "\nCharacter destructor called" << CRESET
 			  << std::endl;
+
+	for (int i = 0; i < INVENTORY_SIZE; i++)
+	{
+		delete inventory[i];
+	}
 }
 
 std::string const&	Character::getName() const
@@ -65,15 +96,22 @@ void	Character::equip(AMateria* materia)
 		if (inventory[i] == NULL)
 		{
 			inventory[i] = materia; // equip to the first empty slot
+			return ;
 		}
 	}
+	std::cout << "No free slot to equip Materia " << materia->getType()
+			  << std::endl;
 }
 
 void	Character::unequip(int idx)
 {
-	if (inventory[idx])
+	if (idx >= INVENTORY_SIZE || inventory[idx] == NULL)
 	{
-		//TODO: unequip but don't delete materia
+		std::cout << "Nothing to unequip at index " << idx << std::endl;
+	}
+	else
+	{
+		std::cout << "Unequipping materia at index " << idx << std::endl;
 		inventory[idx] = NULL;
 	}
 }
@@ -82,7 +120,14 @@ void	Character::use(int idx, ICharacter& target)
 {
 	if (idx < INVENTORY_SIZE)
 	{
-		inventory[idx]->use(target);
+		if (inventory[idx])
+		{
+			inventory[idx]->use(target);
+		}
+		else
+		{
+			std::cout << "Nothing equipped at index " << idx << std::endl;
+		}
 	}
 	else
 	{

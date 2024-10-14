@@ -22,12 +22,32 @@ void
 testSubjectPDF();
 
 void
-testMateriaCopy();
+testUnequip();
+
+void
+testInvalidCharacterIndex();
+
+void
+testCharacterDeepCopy();
+
+void
+testAMateriaCopy();
+
+void
+testIceCopy();
+
+void
+testCureCopy();
 
 int main()
 {
-	/*testSubjectPDF();*/
-	testMateriaCopy();
+	testSubjectPDF();
+	/*testUnequip();*/
+	/*testInvalidCharacterIndex();*/
+	/*testCharacterDeepCopy();*/
+	/*testAMateriaCopy();*/
+	/*testIceCopy();*/
+	/*testCureCopy();*/
 
 	return 0;
 }
@@ -55,14 +75,94 @@ void	testSubjectPDF()
 	delete src;
 }
 
-void	testMateriaCopy()
+void	testUnequip()
 {
-	Ice	ice = Ice();
-	Ice	ice2 = Ice();
+	IMateriaSource*	src = new MateriaSource();
+	src->learnMateria(new Ice());
+	src->learnMateria(new Cure());
 
-	std::cout << ice.getType() << std::endl;
+	ICharacter*	me = new Character("me");
 
-	ice = ice2;
+	AMateria*	mat;
+	mat = src->createMateria("ice");
+	me->equip(mat);
 
-	std::cout << ice.getType() << std::endl;
+	ICharacter*	target = new Character("Target");
+	me->use(0, *target);
+	me->unequip(0);
+
+	mat = src->createMateria("cure");
+	me->equip(mat);
+	me->use(0, *target);
+
+	delete target;
+	delete me;
+	delete src;
+}
+
+void	testInvalidCharacterIndex()
+{
+	Character	character = Character("Me");
+	Character	target = Character("Target");
+
+	Ice*	ice = new Ice();
+	character.unequip(0);
+	character.unequip(1);
+	character.unequip(2);
+	character.unequip(3);
+	character.unequip(4);
+	character.equip(ice);
+	character.use(0, target);
+	character.use(1, target);
+	character.use(2, target);
+	character.use(3, target);
+	character.use(4, target);
+
+	delete ice;
+}
+
+void	testCharacterDeepCopy()
+{
+	Character	original = Character("Original");
+	Cure		cure = Cure();
+	original.equip(&cure);
+	original.equip(&cure);
+	original.equip(&cure);
+	original.equip(&cure);
+
+	Character	copy = Character(original);
+	Character	target = Character("Target");
+	copy.use(0, target);
+	copy.use(1, target);
+	copy.use(2, target);
+	copy.use(3, target);
+}
+
+void	testAMateriaCopy()
+{
+	// AMateria	materia; // Can't instantiate an abstract class
+
+// Call copy constructor 
+	/*Ice			ice = Ice();*/
+	/*AMateria*	newIce = new Ice(ice);*/
+	/*std::cout << "Type: " << newIce->getType() << std::endl;*/
+	/*delete newIce;*/
+}
+
+void	testIceCopy()
+{
+	Ice	i1 = Ice();
+	Ice	i2 = Ice(i1);
+
+	std::cout << "Type of i1: " << i1.getType() << std::endl;
+	std::cout << "Type of i2: " << i2.getType() << std::endl;
+}
+
+void	testCureCopy()
+{
+	Cure	c1 = Cure();
+	Cure	c2 = Cure(c1);
+
+	std::cout << "Type of c1: " << c1.getType() << std::endl;
+	std::cout << "Type of c2: " << c2.getType() << std::endl;
 }

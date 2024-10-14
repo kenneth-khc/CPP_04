@@ -34,29 +34,33 @@ AMateria::AMateria(std::string const& type): type(type)
 			  << std::endl;
 }
 
-/* Copy constructor */
-AMateria::AMateria(const AMateria& other)
+/* Copy constructor
+ * Mostly unnecessary because AMateria is abstract and never getting constructed
+ * directly, but you can delegate copying from a Derived class to this Base class
+ * to handle its member variables */
+AMateria::AMateria(const AMateria&)//: type(other.type)
 {
 	std::cout << GREEN << "AMateria copy constructor called" << CRESET
 			  << std::endl;
 
-	*this = other;
+	// but nothing needs to get copied
 }
 
 /* Copy assignment operator */
-AMateria&	AMateria::operator=(const AMateria& other)
+AMateria&	AMateria::operator=(const AMateria&)
 {
 	std::cout << GREEN << "AMateria copy assignment operator called" << CRESET
 			  << std::endl;
 
-	this->type = other.type;
+	// don't reassign type to another Materia so we do nothing
+
 	return *this;
 }
 
 /* Destructor */
 AMateria::~AMateria()
 {
-	std::cout << RED << "AMateria destructor called" << CRESET
+	std::cout << RED << "AMateria destructor called\n" << CRESET
 			  << std::endl;
 }
 

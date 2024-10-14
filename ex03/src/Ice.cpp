@@ -15,22 +15,34 @@
 #include "ICharacter.hpp"
 #include "AMateria.hpp"
 
+/* Color codes */
+#define GREEN "\033[0;32m"
+#define RED	"\033[0;31m"
+#define YELLOW "\033[0;33m"
+#define CRESET "\033[0m"
+
 /* Default constructor */
 Ice::Ice(): AMateria("ice")
 {
-	std::cout << "Ice default constructor called" << std::endl;
+	std::cout << GREEN << "Ice default constructor called\n" << CRESET
+			  << std::endl;
 }
 
 /* Copy constructor */
 Ice::Ice(const Ice&): AMateria("ice")
+//AMateria(other) //delegate to AMateria's copy constructor
 {
-	std::cout << "Ice copy constructor called" << std::endl;
+	std::cout << GREEN << "Ice copy constructor called" << CRESET
+			  << std::endl;
 }
 
-Ice&	Ice::operator=(const Ice& other)
+/* Copy assignment operator */
+Ice&	Ice::operator=(const Ice&)
 {
-	(void)other;
-//	this->type = other.type;
+	std::cout << GREEN << "Ice copy assignment operator called" << CRESET
+			  << std::endl;
+
+	// no need to reassign const type of the same Materia
 
 	return *this;
 }
@@ -38,7 +50,8 @@ Ice&	Ice::operator=(const Ice& other)
 /* Destructor */
 Ice::~Ice()
 {
-	std::cout << "Ice destructor called" << std::endl;
+	std::cout << RED << "\nIce destructor called" << CRESET
+			  << std::endl;
 }
 
 void	Ice::use(ICharacter& target)

@@ -13,7 +13,7 @@
 NAME := tests
 
 CXX := c++
-CXXFLAGS := -Wall -Werror -Wextra -std=c++98 -pedantic
+CXXFLAGS := -Wall -Werror -Wextra -std=c++98 -pedantic -g3
 
 srcs := main.cpp AMateria.cpp Ice.cpp Cure.cpp MateriaSource.cpp Character.cpp
 objs := $(addprefix obj/, $(srcs:.cpp=.o))

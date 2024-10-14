@@ -17,11 +17,10 @@
 #include "ICharacter.hpp"
 
 /* An abstract Materia */
-
 class	AMateria
 {
 protected:
-	std::string	type;
+	const std::string	type;
 
 public:
 	AMateria(); // default constructor
@@ -29,9 +28,9 @@ public:
 	AMateria(const AMateria&); // copy constructor
 	virtual ~AMateria(); // destructor
 	AMateria&	operator=(const AMateria&); // copy assignment operator
-	
+
 	std::string const&	getType() const; // Returns the materia type
-	virtual AMateria*	clone() const = 0; // Return a new instance of the same materia
+	virtual AMateria*	clone() const = 0; // Returns a new instance of the materia
 	virtual void		use(ICharacter& target); // Use the materia on a target
 };
 

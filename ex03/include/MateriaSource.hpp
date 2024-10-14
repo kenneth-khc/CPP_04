@@ -20,8 +20,11 @@
 class	MateriaSource: public IMateriaSource
 {
 public:
-	MateriaSource();
-	~MateriaSource();
+	MateriaSource(); // default constructor
+	MateriaSource(const MateriaSource&); // copy constructor
+	MateriaSource&	operator=(const MateriaSource&); // copy assignment operator
+	~MateriaSource(); // destructor
+
 	void		learnMateria(AMateria*); // override
 	AMateria*	createMateria(std::string const& type); // override
 
