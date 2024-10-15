@@ -22,14 +22,14 @@
 /* Default constructor */
 Dog::Dog(): Animal("Dog")
 {
-	std::cout << GREEN << "Dog default constructor called" << CRESET
+	std::cout << GREEN << "Dog default constructor called\n" << CRESET
 			  << std::endl;
 }
 
 /* Copy constructor */
 Dog::Dog(const Dog& other)
 {
-	std::cout << GREEN << "Dog copy constructor called" << CRESET
+	std::cout << GREEN << "Dog copy constructor called\n" << CRESET
 			  << std::endl;
 
 	*this = other;
@@ -38,7 +38,7 @@ Dog::Dog(const Dog& other)
 /* Copy assignment operator */
 Dog&	Dog::operator=(const Dog& other)
 {
-	std::cout << GREEN << "Dog copy assignment operator called" << CRESET
+	std::cout << GREEN << "Dog copy assignment operator called\n" << CRESET
 			  << std::endl;
 
 	this->type = other.type;

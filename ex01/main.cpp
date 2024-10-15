@@ -47,7 +47,7 @@ void	testSubjectPDF()
 
 void	testArrayOfAnimals()
 {
-	std::cout << "\nCreating an array of 10 dogs and 10 cats" << std::endl;
+	std::cout << "Creating an array of 10 dogs and 10 cats" << std::endl;
 
 	const Animal*	animals[20];
 	for (int i = 0; i < 20; i++)
@@ -56,7 +56,7 @@ void	testArrayOfAnimals()
 		i++;
 		animals[i] = new Dog();
 	}
-	std::cout << "\nLooping over the array to delete each animal" << std::endl;
+	std::cout << "Looping over the array to delete each animal" << std::endl;
 	for (int i = 0; i < 20; i++)
 	{
 		/* Animal's destructor is virtual so it will call the correct

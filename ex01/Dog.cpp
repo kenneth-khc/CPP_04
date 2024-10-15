@@ -26,7 +26,7 @@ Dog::Dog(): Animal("Dog")
 			  << std::endl;
 
 	brain = new Brain();
-	std::cout << '\n';
+	std::cout << std::endl;
 }
 
 /* Copy constructor */

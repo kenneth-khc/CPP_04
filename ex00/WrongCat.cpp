@@ -22,7 +22,7 @@
 /* Default constructor */
 WrongCat::WrongCat(): WrongAnimal("WrongCat")
 {
-	std::cout << GREEN << "WrongCat default constructor called" << CRESET
+	std::cout << GREEN << "WrongCat default constructor called\n" << CRESET
 			  << std::endl;
 }
 

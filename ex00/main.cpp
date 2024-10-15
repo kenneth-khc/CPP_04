@@ -28,9 +28,9 @@ test_subtype_polymorphism();
 
 int main()
 {
-	test_subject_pdf();
-	//test_wrong_implementation();
-	//test_subtype_polymorphism();
+	/*test_subject_pdf();*/
+	/*test_wrong_implementation();*/
+	test_subtype_polymorphism();
 
 	return 0;
 }
@@ -46,6 +46,8 @@ void	test_subject_pdf()
 	j->makeSound();
 	meta->makeSound();
 
+	std::cout << std::endl;
+
 	delete meta;
 	delete j;
 	delete i;
@@ -59,13 +61,15 @@ void	test_wrong_implementation()
 	wrongAnimal->makeSound();
 	wrongCat->makeSound();
 
+	std::cout << std::endl;
+
 	delete wrongAnimal;
 	delete wrongCat;
 }
 
 void	test_subtype_polymorphism()
 {
-	std::cout << "\nCreating an array of 10 dogs and cats" << std::endl;
+	std::cout << "Creating an array of 10 dogs and cats" << std::endl;
 
 	const Cat*	cats = new Cat[10];
 	const Dog*	dogs = new Dog[10];
@@ -80,11 +84,12 @@ void	test_subtype_polymorphism()
 		j++;
 	}
 
-	std::cout << "\nAnimals start making noise" << std::endl;
+	std::cout << "Animals start making noise" << std::endl;
 	for (int i =0; i < 20; i++)
 	{
 		animals[i]->makeSound();
 	}
+	std::cout << std::endl;
 
 	delete []dogs;
 	delete []cats;
