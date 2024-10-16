@@ -90,6 +90,7 @@ void	testUnequip()
 	ICharacter*	target = new Character("Target");
 	me->use(0, *target);
 	me->unequip(0);
+	delete mat; std::cout << '\n';
 
 	mat = src->createMateria("cure");
 	me->equip(mat);
@@ -117,18 +118,16 @@ void	testInvalidCharacterIndex()
 	character.use(2, target);
 	character.use(3, target);
 	character.use(4, target);
-
-	delete ice;
 }
 
 void	testCharacterDeepCopy()
 {
 	Character	original = Character("Original");
-	Cure		cure = Cure();
-	original.equip(&cure);
-	original.equip(&cure);
-	original.equip(&cure);
-	original.equip(&cure);
+	Cure		*cure = new Cure();
+	original.equip(cure);
+	original.equip(cure->clone());
+	original.equip(cure->clone());
+	original.equip(cure->clone());
 
 	Character	copy = Character(original);
 	Character	target = Character("Target");

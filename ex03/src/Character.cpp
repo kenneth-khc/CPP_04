@@ -75,13 +75,15 @@ Character&	Character::operator=(const Character& other)
 /* Destructor */
 Character::~Character()
 {
-	std::cout << RED << "\nCharacter destructor called" << CRESET
-			  << std::endl;
+	std::cout << RED << "Character destructor called\n" << CRESET;
 
 	for (int i = 0; i < INVENTORY_SIZE; i++)
 	{
 		delete inventory[i];
+		inventory[i] = NULL;
 	}
+
+	std::cout << std::endl;
 }
 
 std::string const&	Character::getName() const

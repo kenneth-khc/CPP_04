@@ -32,14 +32,14 @@ Ice::Ice(): AMateria("ice")
 Ice::Ice(const Ice&): AMateria("ice")
 //AMateria(other) //delegate to AMateria's copy constructor
 {
-	std::cout << GREEN << "Ice copy constructor called" << CRESET
+	std::cout << GREEN << "Ice copy constructor called\n" << CRESET
 			  << std::endl;
 }
 
 /* Copy assignment operator */
 Ice&	Ice::operator=(const Ice&)
 {
-	std::cout << GREEN << "Ice copy assignment operator called" << CRESET
+	std::cout << GREEN << "Ice copy assignment operator called\n" << CRESET
 			  << std::endl;
 
 	// no need to reassign const type of the same Materia
@@ -50,7 +50,7 @@ Ice&	Ice::operator=(const Ice&)
 /* Destructor */
 Ice::~Ice()
 {
-	std::cout << RED << "\nIce destructor called" << CRESET
+	std::cout << RED << "Ice destructor called" << CRESET
 			  << std::endl;
 }
 

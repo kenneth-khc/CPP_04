@@ -60,8 +60,8 @@ AMateria&	AMateria::operator=(const AMateria&)
 /* Destructor */
 AMateria::~AMateria()
 {
-	std::cout << RED << "AMateria destructor called\n" << CRESET
-			  << std::endl;
+	std::cout << RED << "AMateria destructor called\n" << CRESET;
+			  /*<< std::endl;*/
 }
 
 void	AMateria::use(ICharacter& target)
