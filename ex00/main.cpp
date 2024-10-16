@@ -6,7 +6,7 @@
 /*   By: kecheong <kecheong@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 16:49:02 by kecheong          #+#    #+#             */
-/*   Updated: 2024/10/02 18:12:28 by kecheong         ###   ########.fr       */
+/*   Updated: 2024/10/16 18:36:20 by kecheong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,24 +18,24 @@
 #include "WrongCat.hpp"
 
 void
-test_subject_pdf();
+testSubjectPDF();
 
 void
-test_wrong_implementation();
+testWrongImplementation();
 
 void
-test_subtype_polymorphism();
+testSubtypePolymorphism();
 
 int main()
 {
-	/*test_subject_pdf();*/
-	/*test_wrong_implementation();*/
-	test_subtype_polymorphism();
+	testSubjectPDF();
+	/*testWrongImplementation();*/
+	/*testSubtypePolymorphism();*/
 
 	return 0;
 }
 
-void	test_subject_pdf()
+void	testSubjectPDF()
 {
 	const Animal* meta = new Animal();
 	const Animal* j = new Dog();
@@ -53,7 +53,7 @@ void	test_subject_pdf()
 	delete i;
 }
 
-void	test_wrong_implementation()
+void	testWrongImplementation()
 {
 	const WrongAnimal*	wrongAnimal = new WrongAnimal();
 	const WrongAnimal*	wrongCat = new WrongCat();
@@ -67,7 +67,7 @@ void	test_wrong_implementation()
 	delete wrongCat;
 }
 
-void	test_subtype_polymorphism()
+void	testSubtypePolymorphism()
 {
 	std::cout << "Creating an array of 10 dogs and cats" << std::endl;
 

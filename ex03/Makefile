@@ -6,14 +6,14 @@
 #    By: kecheong <kecheong@student.42kl.edu.my>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/27 12:49:22 by kecheong          #+#    #+#              #
-#    Updated: 2024/10/13 03:16:05 by kecheong         ###   ########.fr        #
+#    Updated: 2024/10/16 18:04:36 by kecheong         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME := tests
 
 CXX := c++
-CXXFLAGS := -Wall -Werror -Wextra -std=c++98 -pedantic -g3
+CXXFLAGS := -Wall -Werror -Wextra -std=c++98 -pedantic
 
 srcs := main.cpp AMateria.cpp Ice.cpp Cure.cpp MateriaSource.cpp Character.cpp
 objs := $(addprefix obj/, $(srcs:.cpp=.o))
@@ -39,6 +39,10 @@ fclean: clean
 
 .PHONY: re
 re: fclean all
+
+.PHONY: debug
+debug: CXXFLAGS += -g3
+debug: $(NAME)
 
 .PHONY: fsan
 fsan: CXXFLAGS += -fsanitize=address -g3
