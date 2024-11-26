@@ -42,12 +42,12 @@ testCureCopy();
 int main()
 {
 	testSubjectPDF();
-	/*testUnequip();*/
-	/*testInvalidCharacterIndex();*/
-	/*testCharacterDeepCopy();*/
-	/*testAMateriaCopy();*/
-	/*testIceCopy();*/
-	/*testCureCopy();*/
+	// testUnequip();
+	// testInvalidCharacterIndex();
+	// testCharacterDeepCopy();
+	// testAMateriaCopy();
+	// testIceCopy();
+	// testCureCopy();
 
 	return 0;
 }
@@ -142,10 +142,10 @@ void	testAMateriaCopy()
 	// AMateria	materia; // Can't instantiate an abstract class
 
 // Call copy constructor 
-	/*Ice			ice = Ice();*/
-	/*AMateria*	newIce = new Ice(ice);*/
-	/*std::cout << "Type: " << newIce->getType() << std::endl;*/
-	/*delete newIce;*/
+	// Ice			ice = Ice();
+	// AMateria*	newIce = new Ice(ice);
+	// std::cout << "Type: " << newIce->getType() << std::endl;
+	// delete newIce;
 }
 
 void	testIceCopy()

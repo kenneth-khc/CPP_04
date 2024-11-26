@@ -20,30 +20,34 @@
 #define CRESET "\033[0m"
 
 /* Default constructor */
-Animal::Animal(): type("Default Animal")
+Animal::Animal():
+type("Default Animal")
 {
-	std::cout << GREEN << "Animal default constructor called\n" << CRESET << std::endl;
+	std::cout << GREEN << "Animal default constructor called\n" << CRESET
+			  << std::endl;
 }
 
 /* Constructor */
-Animal::Animal(std::string newType): type(newType)
+Animal::Animal(std::string newType):
+type(newType)
 {
-	std::cout << GREEN << "Animal constructor called" << CRESET << std::endl;
+	std::cout << GREEN << "Animal constructor called" << CRESET
+			  << std::endl;
 }
 
 /* Copy constructor */
 Animal::Animal(const Animal& other)
 {
-	std::cout << GREEN << "Animal copy constructor called" << CRESET << std::endl;
-	*this = other;
+	std::cout << GREEN << "Animal copy constructor called" << CRESET
+			  << std::endl;
+
+	this->type = other.type;
 }
 
 /* Copy assignment operator */
 Animal&	Animal::operator=(const Animal& other)
 {
-	std::cout << GREEN
-			  << "Animal copy assignment operator called"
-			  << CRESET
+	std::cout << GREEN << "Animal copy assignment operator called" << CRESET
 			  << std::endl;
 
 	this->type = other.type;
@@ -53,7 +57,8 @@ Animal&	Animal::operator=(const Animal& other)
 /* Destructor */
 Animal::~Animal()
 {
-	std::cout << RED << "Animal destructor called\n" << CRESET << std::endl;
+	std::cout << RED << "Animal destructor called\n" << CRESET
+			  << std::endl;
 }
 
 /* Get the type of the Animal */
@@ -62,8 +67,8 @@ const std::string&	Animal::getType() const
 	return type;
 }
 
+/* Animal makes a generic sound. To be overriden by derived classes */
 void	Animal::makeSound() const
 {
 	std::cout << "Animal makes a sound" << std::endl;
 }
-

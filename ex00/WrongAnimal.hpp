@@ -24,14 +24,12 @@ public:
 	WrongAnimal&	operator=(const WrongAnimal&); // Copy assignment operator
 	~WrongAnimal(); // Destructor
 
-
+	/* Member functions */
 	const std::string&	getType() const;
 	void				makeSound() const;
 
 protected:
 	std::string	type;
-
-
 };
 
 #endif

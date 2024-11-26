@@ -19,10 +19,11 @@ class	Dog: public Animal
 {
 public:
 	Dog(); // Default constructor
-	~Dog(); // Destructor
 	Dog(const Dog&); // Copy constructor
 	Dog&	operator=(const Dog&); // Copy assignment operator
+	~Dog(); // override // Destructor
 
+	/* Member functions */
 	const std::string&	getType() const; // override
 	void				makeSound() const; // override
 };

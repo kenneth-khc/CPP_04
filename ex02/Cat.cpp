@@ -20,7 +20,8 @@
 #define CRESET "\033[0m"
 
 /* Default constructor */
-Cat::Cat(): Animal("Cat")
+Cat::Cat():
+Animal("Cat")
 {
 	std::cout << GREEN << "Cat default constructor called" << CRESET
 			  << std::endl;
@@ -30,12 +31,12 @@ Cat::Cat(): Animal("Cat")
 }
 
 /* Copy constructor */
-Cat::Cat(const Cat& other)
+Cat::Cat(const Cat& other):
+Animal(other)
 {
 	std::cout << GREEN << "Cat copy constructor called" << CRESET
 			  << std::endl;
 
-	this->type = other.type;
 	if (other.brain)
 	{
 		this->brain = new Brain(*other.brain); // call Brain's copy constructor
@@ -61,7 +62,7 @@ Cat&	Cat::operator=(const Cat& other)
 		return *this;
 	}
 
-	this->type = other.type;
+	Animal::operator=(other);
 	delete brain;
 	if (other.brain)
 	{

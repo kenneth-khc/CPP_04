@@ -28,7 +28,8 @@ AMateria::AMateria()
 }
 
 /* Constructor */
-AMateria::AMateria(std::string const& type): type(type)
+AMateria::AMateria(std::string const& type):
+type(type)
 {
 	std::cout << GREEN << "AMateria constructor called" << CRESET
 			  << std::endl;

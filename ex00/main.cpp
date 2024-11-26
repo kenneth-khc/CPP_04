@@ -21,6 +21,9 @@ void
 testSubjectPDF();
 
 void
+testConstructors();
+
+void
 testWrongImplementation();
 
 void
@@ -29,8 +32,9 @@ testSubtypePolymorphism();
 int main()
 {
 	testSubjectPDF();
-	/*testWrongImplementation();*/
-	/*testSubtypePolymorphism();*/
+	// testConstructors();
+	// testWrongImplementation();
+	// testSubtypePolymorphism();
 
 	return 0;
 }
@@ -51,6 +55,36 @@ void	testSubjectPDF()
 	delete meta;
 	delete j;
 	delete i;
+}
+
+void	testConstructors()
+{
+	// Test default constructors
+	const Animal	animal;
+	const Cat		cat;
+	const Dog		dog;
+
+	std::cout << animal.getType() << '\n'
+			  << cat.getType() << '\n'
+			  << dog.getType() << '\n';
+
+	// Test copy constructors
+	const Animal copy_animal(animal);
+	const Cat	copy_cat(cat);
+	const Dog	copy_dog(dog);
+
+	std::cout << copy_animal.getType() << '\n'
+			<< copy_cat.getType() << '\n'
+			<< copy_dog.getType() << '\n';
+	
+	// Test copy assignment operators
+	Animal	temp_animal;
+	temp_animal = animal;
+	std::cout << temp_animal.getType() << '\n';
+	temp_animal = cat;
+	std::cout << temp_animal.getType() << '\n';
+	temp_animal = dog;
+	std::cout << temp_animal.getType() << '\n';
 }
 
 void	testWrongImplementation()

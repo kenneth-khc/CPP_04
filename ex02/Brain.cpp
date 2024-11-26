@@ -31,6 +31,7 @@ Brain::Brain(const Brain& other)
 {
 	std::cout << GREEN << "Brain's copy constructor called" << CRESET
 			  << std::endl;
+
 	*this = other;
 }
 

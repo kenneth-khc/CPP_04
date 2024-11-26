@@ -27,7 +27,7 @@ WrongCat::WrongCat(): WrongAnimal("WrongCat")
 }
 
 /* Copy constructor */
-WrongCat::WrongCat(const WrongCat& other)
+WrongCat::WrongCat(const WrongCat& other): WrongAnimal(other)
 {
 	std::cout << GREEN << "WrongCat copy constructor called" << CRESET 
 			  << std::endl;

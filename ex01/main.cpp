@@ -30,9 +30,9 @@ testDogDeepCopy();
 int main()
 {
 	testSubjectPDF();
-	/*testArrayOfAnimals();*/
-	/*testCatDeepCopy();*/
-	/*testDogDeepCopy();*/
+	// testArrayOfAnimals();
+	// testCatDeepCopy();
+	// testDogDeepCopy();
 
 	return 0;
 }

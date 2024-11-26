@@ -24,6 +24,7 @@ public:
 	Dog(const Dog&); // Copy constructor
 	Dog&	operator=(const Dog&); // Copy assignment operator
 
+	/* Member functions */
 	const std::string&	getType() const; // override
 	void				makeSound() const; // override
 

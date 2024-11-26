@@ -24,6 +24,7 @@ public:
 	Cat&	operator=(const Cat&); // Copy assignment operator
 	~Cat(); // Destructor
 	
+	/* Member functions */
 	const std::string&	getType() const; // override
 	void				makeSound() const; // override
 

@@ -69,4 +69,3 @@ void	WrongAnimal::makeSound() const
 {
 	std::cout << "WrongAnimal makes a sound" << std::endl;
 }
-

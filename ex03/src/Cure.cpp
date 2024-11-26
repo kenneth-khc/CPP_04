@@ -21,14 +21,16 @@
 #define CRESET "\033[0m"
 
 /* Default constructor */
-Cure::Cure(): AMateria("cure")
+Cure::Cure():
+AMateria("cure")
 {
 	std::cout << GREEN << "Cure default constructor called\n" << CRESET
 			  << std::endl;
 }
 
 /* Copy constructor */
-Cure::Cure(const Cure&): AMateria("cure")
+Cure::Cure(const Cure&):
+AMateria("cure")
 //AMateria(other) // delegate to AMateria's copy constructor
 {
 	std::cout << GREEN << "Cure copy constructor called" << CRESET

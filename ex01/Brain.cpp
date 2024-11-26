@@ -39,7 +39,7 @@ Brain&	Brain::operator=(const Brain& other)
 {
 	if (this == &other)
 	{
-		std::cout << "Not copying assigning brain due to self assignment"
+		std::cout << "Not copy assigning brain due to self assignment"
 				  << std::endl;
 		return *this;
 	}

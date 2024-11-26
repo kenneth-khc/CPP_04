@@ -22,14 +22,16 @@
 #define CRESET "\033[0m"
 
 /* Default constructor */
-Ice::Ice(): AMateria("ice")
+Ice::Ice():
+AMateria("ice")
 {
 	std::cout << GREEN << "Ice default constructor called\n" << CRESET
 			  << std::endl;
 }
 
 /* Copy constructor */
-Ice::Ice(const Ice&): AMateria("ice")
+Ice::Ice(const Ice&):
+AMateria("ice")
 //AMateria(other) //delegate to AMateria's copy constructor
 {
 	std::cout << GREEN << "Ice copy constructor called\n" << CRESET

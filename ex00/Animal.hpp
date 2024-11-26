@@ -24,13 +24,12 @@ public:
 	Animal&	operator=(const Animal&); // Copy assignment operator
 	virtual ~Animal(); // Destructor
 
-
+	/* Member functions */
 	virtual	const std::string&	getType() const;
 	virtual void				makeSound() const;
 
 protected:
 	std::string	type;
-
 };
 
 #endif

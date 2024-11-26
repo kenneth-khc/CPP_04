@@ -23,6 +23,7 @@ public:
 	WrongCat&	operator=(const WrongCat&); // Copy assignment operator
 	~WrongCat(); // Destructor
 	
+	/* Member functions */
 	const std::string&	getType() const;
 	void				makeSound() const;
 };

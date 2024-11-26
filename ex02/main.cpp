@@ -18,8 +18,8 @@
 void
 testSubjectPDF();
 
-/*Animal*/
-/*testAbstractClass();*/
+/* Animal
+testAbstractClass(); */
 
 void
 testPointersAndReferences();
@@ -27,8 +27,8 @@ testPointersAndReferences();
 int main()
 {
 	testSubjectPDF();
-	/*testAbstractClass();*/
-	/*testPointersAndReferences();*/
+	// testAbstractClass();
+	// testPointersAndReferences();
 	return 0;
 }
 
@@ -46,15 +46,15 @@ void	testSubjectPDF()
 
 	/* Attempt to create an Animal object which is abstract */
 
-	/*const Animal* meta = new Animal();*/
-	/*meta->makeSound();*/
-	/*delete meta;*/
+/* 	const Animal* meta = new Animal();
+	meta->makeSound();
+	delete meta; */
 }
 
-/*Animal	testAbstractClass()*/
-/*{*/
-/*	return Animal();*/
-/*}*/
+/* Animal	testAbstractClass()
+{
+	return Animal();
+} */
 
 void	testPointersAndReferences()
 {
@@ -67,4 +67,5 @@ void	testPointersAndReferences()
 	ref.makeSound();
 	std::cout << '\n';
 	delete &ref; // not good practice because it causes confusion, delete with pointer instead
+				 // (or don't use new/deletes at all)
 }

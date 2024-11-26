@@ -21,11 +21,11 @@ public:
 	Cat(); // Default constructor
 	Cat(const Cat&); // Copy constructor
 	Cat&	operator=(const Cat&); // Copy assignment operator
-	~Cat(); // Destructor
-	
+	~Cat(); // override // Destructor
+
+	/* Member functions */
 	const std::string&	getType() const; // override
 	void				makeSound() const; // override
-
 };
 
 #endif

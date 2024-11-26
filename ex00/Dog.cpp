@@ -20,19 +20,19 @@
 #define CRESET "\033[0m"
 
 /* Default constructor */
-Dog::Dog(): Animal("Dog")
+Dog::Dog():
+Animal("Dog")
 {
 	std::cout << GREEN << "Dog default constructor called\n" << CRESET
 			  << std::endl;
 }
 
 /* Copy constructor */
-Dog::Dog(const Dog& other)
+Dog::Dog(const Dog& other):
+Animal(other)
 {
 	std::cout << GREEN << "Dog copy constructor called\n" << CRESET
 			  << std::endl;
-
-	*this = other;
 }
 
 /* Copy assignment operator */
@@ -41,7 +41,7 @@ Dog&	Dog::operator=(const Dog& other)
 	std::cout << GREEN << "Dog copy assignment operator called\n" << CRESET
 			  << std::endl;
 
-	this->type = other.type;
+	Animal::operator=(other);
 	return *this;
 }
 
